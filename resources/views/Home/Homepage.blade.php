@@ -1,6 +1,12 @@
 @extends('index')
 @section('content')
-    <div class="col">
-        Tes Halaman Homepage
+    <div class="container" style="">
+        <div class="row ">
+            <div class="col text-align-center" style="text-align: center; font-family: 'Futura Md Bt';">
+                <b style="font-size: 40px;">Selamat Datang!</b><br>
+                <p style="font-size: 20px">Komputasi Numerik - Regresi Kuadratik <br>
+                Prediksi harga Kebutuhan pangan</p>
+            </div>
+        </div>
     </div>
 @endsection
