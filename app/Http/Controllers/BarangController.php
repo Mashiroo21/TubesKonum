@@ -20,17 +20,27 @@ class BarangController extends Controller
     //method untuk tambah data barang
     public function barangtambah(Request $request)
     {
-        $this->validate($request, [
+        $request->validate([
             'Nama_Barang' => 'required',
             'Tanggal' => 'required',
             'Harga' => 'required',
         ]);
 
-        BarangModel::create([
-            'Nama_Barang' => $request->Nama_Barang,
-            'Tanggal' => $request->Tanggal,
-            'Harga' => $request->Harga,
-        ]);
+        $harga_barang = new BarangModel;
+        $harga_barang->Nama_Barang = $request->Nama_Barang;
+        $harga_barang->tanggal = $request->Tanggal;
+        $harga_barang->harga = $request->Harga;
+        $harga_barang->save();
+        // dd($request->Nama_Barang);
+        // dd($request->Tanggal);
+        // dd($request->Harga);
+
+
+        // BarangModel::create([
+        //     'Nama_Barang' => $request->Nama_Barang,
+        //     'Tanggal' => $request->tanggal,
+        //     'Harga' => $request->harga,
+        // ]);
 
         return redirect('/barang');
     }
@@ -55,8 +65,8 @@ class BarangController extends Controller
 
         $id_barang = BarangModel::find($id_barang);
         $id_barang->Nama_Barang   = $request->Nama_Barang;
-        $id_barang->Tanggal      = $request->Tanggal;
-        $id_barang->Harga  = $request->Harga;
+        $id_barang->tanggal      = $request->Tanggal;
+        $id_barang->harga  = $request->Harga;
 
         $id_barang->save();
 

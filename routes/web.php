@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\PrediksiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,9 @@ Route::get('/Prediksi', function () {
 
 
 Route::get('/barang', [BarangController::class, 'barangtampil'])->name('Barang');
-Route::get('/barang/tambah', 'BarangController@barangtambah');
-Route::get('/barang/hapus/{id_barang}', 'BarangController@baranghapus');
-Route::get('/barang/edit/{id_barang}', 'BarangController@barangedit');
+Route::post('/barang/tambah', [BarangController::class, 'barangtambah']);
+Route::get('/barang/hapus/{id_barang}', [BarangController::class, 'baranghapus']);
+Route::put('/barang/edit/{id_barang}', [BarangController::class, 'barangedit']);
+
+
+Route::get('/prediksi/hari', [PrediksiController::class, 'index'])->name('prediksi');

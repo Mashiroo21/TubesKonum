@@ -2,7 +2,7 @@
     <div class="row text-muted">
         <div class="col-6 text-start">
             <p class="mb-0">
-                <a href="#" class="text-muted"><strong>AdminKit Demo</strong></a> &copy;
+                <a href="#" class="text-muted"><strong>Kelompok 2</strong></a> &copy;
             </p>
         </div>
         <div class="col-6 text-end">
